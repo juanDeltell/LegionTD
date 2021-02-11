@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6285670125716240847}
   - component: {fileID: 3421262051972488728}
   - component: {fileID: 2670646232361388149}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 8619381002154389180}
   - component: {fileID: 9092722648509907156}
   - component: {fileID: 6307272986860185439}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HealthBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 3089458897645658468}
   - component: {fileID: 1463396729825302675}
   - component: {fileID: 5984696990150786288}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 6165195041200360832}
   - component: {fileID: 6165195041200360834}
   - component: {fileID: 6165195041200360833}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 6165195041618010615}
   - component: {fileID: 6165195041618010609}
   - component: {fileID: 6165195041618010608}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -418,7 +418,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6165195041908888355}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: firePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -448,7 +448,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6165195041113123851}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: partToRotate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -483,7 +483,7 @@ GameObject:
   - component: {fileID: 6964437951964986043}
   - component: {fileID: 4335439201600817863}
   - component: {fileID: 1385262207495800320}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: StandardTurret
   m_TagString: Ally
   m_Icon: {fileID: 0}
@@ -561,7 +561,7 @@ BoxCollider:
   m_GameObject: {fileID: 6964437951964986042}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}

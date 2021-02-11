@@ -3,18 +3,21 @@ using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
-    public Color hoverColor;
-    public Color notEnoughMonyColor;
-    private Renderer rend;
-    private Color startColor;
+    [SerializeField] private Color hoverColor;
+    [SerializeField] private Color notEnoughMonyColor;
+    [SerializeField] private Renderer rend;
+    [SerializeField] private Color startColor;
 
-    public GameObject turret;
+    [SerializeField] private Camera mainCamera;
 
+    [SerializeField] private GameObject turret;
 
-    [HideInInspector]
-    public TurretBluePrint turretBluePrint;
-    [HideInInspector]
-    public bool isUpgraded;
+    [SerializeField] private LayerMask layerMask;
+    [SerializeField] private string layerTurretName;
+    [SerializeField] private Turret king;
+
+    [HideInInspector] public TurretBluePrint turretBluePrint;
+    [HideInInspector] public bool isUpgraded;
     public bool isTurretOn;
     
 
@@ -30,27 +33,30 @@ public class Node : MonoBehaviour
 
         isUpgraded = false;
         isTurretOn = false;
+
+        
+        if (this.GetComponent<Node>().name == "Node (100000)")//King
+        {
+            isTurretOn = true;
+            king.setNodeOfThisTurret(this);
+        }
+           
 }
 
-    void OnMouseDown()
+    public void RayCastOnClick()
     {
-        Debug.Log("Click on: " + this);
-        Debug.Log("hemos llegado aqui ??? 1");
-        if (EventSystem.current.IsPointerOverGameObject())
-            return;
-        Debug.Log("hemos llegado aqui???  2");
+       
         if (turret != null)
         {
             Debug.Log("hemos llegado aqui??? lo que buskmos");
             buildManager.SelectNode(this);
             return;
         }
-        Debug.Log("hemos llegado aqui???  3");
+        
         if (!buildManager.CanBuild)
-            return;
-        Debug.Log("hemos llegado aqui???  4");
-        BuildTurret(buildManager.GetTurretToBuild());
-
+                return;
+        //    Debug.Log("hemos llegado aqui???  4");
+            BuildTurret(buildManager.GetTurretToBuild());
     }
 
 
@@ -74,6 +80,8 @@ public class Node : MonoBehaviour
         Destroy(effect, 5f);
 
         buildManager.profitsUI.SetTargetLoosesText(this);
+
+        turret.GetComponent<Turret>().setNodeOfThisTurret(this);
 
         isTurretOn = true;
         Debug.Log("Turret built. Player money left: " + PlayerStats.Money);
@@ -155,6 +163,7 @@ public class Node : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         
     }
 }

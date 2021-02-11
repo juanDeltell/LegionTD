@@ -13,7 +13,6 @@ public class NodeUI : MonoBehaviour
 
     public void SetTarget(Node _target)
     {
-        Debug.Log("rarta");
         target = _target;
         transform.position = target.GetBuildPosition();
         if (!target.isUpgraded)

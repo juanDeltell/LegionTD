@@ -14,6 +14,7 @@ public class Turret : MonoBehaviour
     public float fireRate = 1f;
     private float fireCountDown = 0f;
 
+    private Node nodeOfThisTurret;
 
     [Header("Use Laser")]
 
@@ -36,13 +37,17 @@ public class Turret : MonoBehaviour
     public Image healthBar;
 
 
-
+    public void setNodeOfThisTurret(Node node)
+    {
+        nodeOfThisTurret = node ;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         health = startHealth;
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+
     }
 
     void UpdateTarget()
@@ -70,6 +75,12 @@ public class Turret : MonoBehaviour
             target = null;
         }
     }
+
+    public void RayCastOnClick()
+    {
+        nodeOfThisTurret.RayCastOnClick();
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -103,11 +114,6 @@ public class Turret : MonoBehaviour
 
             fireCountDown -= Time.deltaTime;
         }
-    }
-    void OnMouseDown()
-    {
-
-        Debug.Log("isma aa");
     }
 
     void LookOnTarget()

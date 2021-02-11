@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 74300778459893428}
   - component: {fileID: 74300778459893431}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 74300779215877736}
   - component: {fileID: 74300779215877738}
   - component: {fileID: 74300779215877739}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4857,7 +4857,7 @@ GameObject:
   - component: {fileID: 2826913192728052928}
   - component: {fileID: 2598534696598338422}
   - component: {fileID: 9098989818161278866}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4937,7 +4937,7 @@ GameObject:
   - component: {fileID: 5320828790428656043}
   - component: {fileID: 1133507835681184110}
   - component: {fileID: 418691465216713216}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5009,7 +5009,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8010886213935283772}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5042,7 +5042,7 @@ GameObject:
   - component: {fileID: 1824997467098534265}
   - component: {fileID: 2350230018325077979}
   - component: {fileID: 7125430233821931191}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5138,7 +5138,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2172197167515073951}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PartToRotate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5172,7 +5172,7 @@ GameObject:
   - component: {fileID: 3820778201133253838}
   - component: {fileID: 1339183990695404316}
   - component: {fileID: 163290995175782457}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HealthBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5247,7 +5247,7 @@ GameObject:
   - component: {fileID: 1717978944632558182}
   - component: {fileID: 6435802722366711873}
   - component: {fileID: 4941281068900872666}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5330,7 +5330,7 @@ GameObject:
   - component: {fileID: 5335400919878095715}
   - component: {fileID: 3171621964227560954}
   - component: {fileID: 8508304242011285053}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LaserBeamerWithImpactEffect_Upgraded
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5520,6 +5520,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LaserImpactEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 124965931062651769, guid: 513abc808b3c32b4cbc03a001fd1e26a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7895114945859862651, guid: 513abc808b3c32b4cbc03a001fd1e26a,
         type: 3}

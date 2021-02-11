@@ -7,41 +7,41 @@ public class Unit : MonoBehaviour
 {
 
     [Header("Unit")]
-    public float startSpeed = 3f;
-    public float speed;
-    public float startHealth = 100;
-    public float health;
-    public float vision = 3f;
-    public string TagEnemiesName = "Ally";
-    public Image healthBar;
+    [SerializeField] private float startSpeed = 3f;
+    [SerializeField] public float speed;
+    [SerializeField] private float startHealth = 100;
+    [SerializeField] private float health;
+    [SerializeField] private float vision = 3f;
+    [SerializeField] public string TagEnemiesName = "Ally";
+    [SerializeField] private Image healthBar;
 
     [Header("Unit: shoot")]
-    public GameObject bulletPrefab;
-    public float turnSpeed = 5f;
-    public Transform firePoint;
-    public Transform partToRotate;
-    public float damage = 20;
-    public float fireRate = 1f;
-    public float fireCountDown = 0f;
-    public float range = 1f;
+    [SerializeField] public GameObject bulletPrefab;
+    [SerializeField] public float turnSpeed = 5f;
+    [SerializeField] public Transform firePoint;
+    [SerializeField] public Transform partToRotate;
+    [SerializeField] private float damage = 20;
+    [SerializeField] public float fireRate = 1f;
+    [SerializeField] public float fireCountDown = 0f;
+    [SerializeField] public float range = 1f;
 
     [Header("Unit: enemy")]
-  
-    private bool isDead = false;
-    public int reward = 50;
-    public GameObject enemyDeathEffect;
 
-    public ProfitsUI profitsUIEnemy;
+    [SerializeField] private bool isDead = false;
+    [SerializeField] public int reward = 50;
+    [SerializeField] private GameObject enemyDeathEffect;
+
+    [SerializeField] private ProfitsUI profitsUIEnemy;
 
     GameManager gameManager;
 
     [Header("Tower: Laser")]
-    public float slowAmount = .5f;
-    public bool useLaser = false;
-    public int damageOverTime = 30;//damage per second
-    public LineRenderer lineRenderer;
-    public ParticleSystem impactEffect;
-    public Light impactLight;
+    [SerializeField] private float slowAmount = .5f;
+    [SerializeField] private bool useLaser = false;
+    [SerializeField] private int damageOverTime = 30;//damage per second
+    [SerializeField] private LineRenderer lineRenderer;
+    [SerializeField] private ParticleSystem impactEffect;
+    [SerializeField] private Light impactLight;
     
     
 
@@ -52,6 +52,10 @@ public class Unit : MonoBehaviour
         
     }
 
+    public void RayCastOnClick()
+    {
+        Debug.Log("click on Enemy.");
+    }
     public void TakeDamage(float amount)
     {
         if (transform.name == "King")

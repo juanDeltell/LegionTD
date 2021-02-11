@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1995058726676730928}
   - component: {fileID: 2482911330429248551}
   - component: {fileID: 6248481112413152005}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HealthBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1784986848389607283}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 3805703274125452049}
   - component: {fileID: 4027482424155266215}
   - component: {fileID: 7903183353560696899}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4137222766562231635}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PartToRotate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 3243549398075637712}
   - component: {fileID: 8404486294258142381}
   - component: {fileID: 5649732579866690490}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 2811201608208005946}
   - component: {fileID: 7174565035562492188}
   - component: {fileID: 8049162326409282629}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MissileLauncher
   m_TagString: Ally
   m_Icon: {fileID: 0}
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 305357312544912823}
   - component: {fileID: 5384955085833555856}
   - component: {fileID: 6303157764404336139}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,7 +477,7 @@ GameObject:
   - component: {fileID: 5700564017672853455}
   - component: {fileID: 3485245405800603708}
   - component: {fileID: 3690745319331839255}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -33,14 +33,11 @@ public class BuildManager : MonoBehaviour
 
     public void SelectNode(Node node)
     {
-        Debug.Log("hola caracola COCACOLA");
         if (selectedNode == node)
         {
-            DeselectNode();
-            Debug.Log("hemos deseleccionado");     
+            DeselectNode();   
             return;
         }
-        Debug.Log("hemos seleccionado un NODE");
         selectedNode = node;
         DeselectTurretToBuild();
         nodeUI.SetTarget(node);

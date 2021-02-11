@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8003346581602584755}
   - component: {fileID: 2420251088738726548}
   - component: {fileID: 4347118245767817999}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 3660796678200265142}
   - component: {fileID: 661927588334514028}
   - component: {fileID: 3657342445668775276}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LaserBeamerWithImpactEffect 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7414002646215206730}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PartToRotate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +314,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1723338661879178473}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 195989226715225326}
   - component: {fileID: 4809152947509020457}
   - component: {fileID: 8245426103691119765}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +420,7 @@ GameObject:
   - component: {fileID: 6916917023721463317}
   - component: {fileID: 6685941614275961251}
   - component: {fileID: 468654700116899143}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -501,7 +501,7 @@ GameObject:
   - component: {fileID: 2949885011925642850}
   - component: {fileID: 1394041372416689115}
   - component: {fileID: 3280377523484227222}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -599,7 +599,7 @@ GameObject:
   - component: {fileID: 3837331145719052064}
   - component: {fileID: 6562544939839703912}
   - component: {fileID: 7736676417283739913}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HealthBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -673,7 +673,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8773326373886219361}
   - component: {fileID: 8773326373886219362}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -766,7 +766,7 @@ GameObject:
   - component: {fileID: 8773326374239513789}
   - component: {fileID: 8773326374239513791}
   - component: {fileID: 8773326374239513790}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5520,6 +5520,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LaserImpactEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 124965931062651769, guid: 513abc808b3c32b4cbc03a001fd1e26a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7895114945859862651, guid: 513abc808b3c32b4cbc03a001fd1e26a,
         type: 3}
