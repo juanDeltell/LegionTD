@@ -5,11 +5,21 @@ using UnityEngine;
 public class IncomeMenu : MonoBehaviour
 {
     [Header("Menu enlaced")]
-    public GameObject ActionsMenu;
-    public GameObject thisIncomeMenu;
+    [SerializeField] private GameObject ActionsMenu;
 
-    public GameObject incomeMEnuUI;
+    [SerializeField] private GameObject thisIncomeMenu;
 
+    [SerializeField] private GameObject incomeMEnuUI;
+
+    [SerializeField] private GameObject pitchSurface;
+
+    [SerializeField] private GameObject IncomeOne;
+    
+    [SerializeField] private GameObject IncomeTwo;
+    
+    [SerializeField] private GameObject IncomeThree;
+    
+    [SerializeField] private GameObject IncomeFour;
 
     public void SelecIncomeOne()
     {
@@ -21,6 +31,9 @@ public class IncomeMenu : MonoBehaviour
         }
         PlayerStats.Euros -= 1;
         PlayerStats.Income += 1;
+
+        WaveSpawner w = new WaveSpawner();
+        w.SpawnEnemyIncomePitch(IncomeOne);
         Debug.Log(" 1 income added.");
 
     }

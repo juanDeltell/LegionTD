@@ -19,6 +19,7 @@ public class WaveSpawner : MonoBehaviour
     public float timeBetweenWaves = 1f;
     private float countdown;
     [SerializeField] private float initialCountdown = 55f;
+
     private int waveIndex = 0;
     private bool levelEnded;
 
@@ -106,8 +107,23 @@ public class WaveSpawner : MonoBehaviour
         return pos;
     }
 
+    Vector3 RandomPositionOnPitch()
+    {
+        float x = Random.Range(5, 11);
+        float y = 0.5f;
+        float z = Random.Range(-8, -7);
+        Vector3 pos = new Vector3(x, y, z);
+        transform.position = pos;
+        return pos;
+    }
+
     void SpawnEnemy(GameObject enemy)
     {
         Instantiate(enemy, RandomPosition(), spawnPoint.rotation);
+    }
+
+    public void SpawnEnemyIncomePitch(GameObject enemy)
+    {
+        Instantiate(enemy, RandomPositionOnPitch(), spawnPoint.rotation);
     }
 }

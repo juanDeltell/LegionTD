@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2271489960864579031}
   - component: {fileID: 6960489796807054215}
   m_Layer: 0
-  m_Name: BulletEnemyLevel1
+  m_Name: BulletEnemyFishingShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  damage: 2
+  damage: 10
   explosionRadius: 0
   impactEffect: {fileID: 6796522122947963602, guid: c57233a77f37e46459732263d3cc26e7,
     type: 3}
