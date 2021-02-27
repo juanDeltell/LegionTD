@@ -21,6 +21,13 @@ public class IncomeMenu : MonoBehaviour
     
     [SerializeField] private GameObject IncomeFour;
 
+
+    WaveSpawner waveSpawner;
+
+    private void Start()
+    {
+        waveSpawner = WaveSpawner.instance;
+    }
     public void SelecIncomeOne()
     {
         
@@ -32,8 +39,7 @@ public class IncomeMenu : MonoBehaviour
         PlayerStats.Euros -= 1;
         PlayerStats.Income += 1;
 
-        WaveSpawner w = new WaveSpawner();
-        w.SpawnEnemyIncomePitch(IncomeOne);
+        waveSpawner.SpawnEnemyIncomePitch(IncomeOne);
         Debug.Log(" 1 income added.");
 
     }
@@ -47,6 +53,8 @@ public class IncomeMenu : MonoBehaviour
         }
         PlayerStats.Euros -= 2;
         PlayerStats.Income += 2;
+
+        waveSpawner.SpawnEnemyIncomePitch(IncomeTwo);
         Debug.Log(" 2 income added.");
     }
 
@@ -59,6 +67,8 @@ public class IncomeMenu : MonoBehaviour
         }
         PlayerStats.Euros -= 3;
         PlayerStats.Income += 3;
+
+        waveSpawner.SpawnEnemyIncomePitch(IncomeThree);
         Debug.Log(" 3 income added.");
     }
 
@@ -71,6 +81,8 @@ public class IncomeMenu : MonoBehaviour
         }
         PlayerStats.Euros -= 4;
         PlayerStats.Income += 4;
+
+        waveSpawner.SpawnEnemyIncomePitch(IncomeFour);
         Debug.Log(" 4 income added.");
     }
 

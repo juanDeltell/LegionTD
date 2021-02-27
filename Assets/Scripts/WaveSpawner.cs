@@ -4,20 +4,32 @@ using UnityEngine;
 using UnityEngine.UI;
 public class WaveSpawner : MonoBehaviour
 {
+    public static WaveSpawner instance;
 
-    public static int EnemiesAlive = 0;
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogError("More than one WaveSpaner on scene!.");
+            return;
+        }
+        instance = this;
+    }
+    [SerializeField] public static int EnemiesAlive = 0;
 
-    public Wave[] waves;
+    [SerializeField] private Wave[] waves;
+  
+    public List<GameObject> incomeWaves;
+  
+    private GameManager gameManager;
+    [SerializeField] private Transform spawnPoint;
 
-    public GameManager gameManager;
-    public Transform spawnPoint;
+    [SerializeField] private Text waveCountDownText;
 
-    public Text waveCountDownText;
+    [SerializeField] private Text enemiesAliveCountText;
 
-    public Text enemiesAliveCountText;
-
-    public float timeBetweenWaves = 1f;
-    private float countdown;
+    [SerializeField] private float timeBetweenWaves = 1f;
+    [SerializeField] private float countdown;
     [SerializeField] private float initialCountdown = 55f;
 
     private int waveIndex = 0;
@@ -65,6 +77,7 @@ public class WaveSpawner : MonoBehaviour
         if (countdown <= 0f)
         {
             StartCoroutine(SpawnWave());
+            newRound();
             countdown = timeBetweenWaves;
             levelEnded = true;
             return;
@@ -86,7 +99,7 @@ public class WaveSpawner : MonoBehaviour
 
         Wave wave = waves[waveIndex];
 
-        EnemiesAlive = wave.count;
+       // EnemiesAlive = wave.count;
 
         for (int i = 0; i < wave.count; i++)
         {
@@ -109,9 +122,9 @@ public class WaveSpawner : MonoBehaviour
 
     Vector3 RandomPositionOnPitch()
     {
-        float x = Random.Range(5, 11);
+        float x = Random.Range(20.5f, 25);
         float y = 0.5f;
-        float z = Random.Range(-8, -7);
+        float z = Random.Range(-3.5f, -8.5f);
         Vector3 pos = new Vector3(x, y, z);
         transform.position = pos;
         return pos;
@@ -119,11 +132,34 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnEnemy(GameObject enemy)
     {
-        Instantiate(enemy, RandomPosition(), spawnPoint.rotation);
+        EnemiesAlive++;
+        GameObject enemyToSpawn = (GameObject)Instantiate(enemy, RandomPosition(), spawnPoint.rotation);
+        enemyToSpawn.GetComponent<UnitMovement>().setCanMove(true);
     }
 
     public void SpawnEnemyIncomePitch(GameObject enemy)
     {
-        Instantiate(enemy, RandomPositionOnPitch(), spawnPoint.rotation);
+        
+        Debug.Log("spwawning from income..."+ enemy);
+        GameObject enemyToSpawn = (GameObject)Instantiate(enemy, RandomPositionOnPitch(), spawnPoint.rotation);
+        enemyToSpawn.GetComponent<UnitMovement>().setCanMove(false);
+        incomeWaves.Add(enemyToSpawn);
+    }
+
+
+    /// <summary>
+    /// thisd metod is adding the income new units to the new round.
+    /// It instantiate a new obj from the tipe of the list and then destroy the original one.
+    /// For last it clears the list of new incomes.
+    /// </summary>
+    public void newRound()
+    {
+        foreach (GameObject enemy in incomeWaves)
+        {
+            SpawnEnemy(enemy);
+            Destroy(enemy);
+        }
+
+        incomeWaves.Clear();
     }
 }

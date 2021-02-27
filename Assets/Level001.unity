@@ -26390,8 +26390,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - enemy: {fileID: 2108333528772848018, guid: 756e5af7bf183e14a918d3d1a7c327a7, type: 3}
-    count: 5
+  - enemy: {fileID: 4560040353331234945, guid: 15b1e7569cb6b3d4fa8c9788e61567db, type: 3}
+    count: 15
     rate: 5
   - enemy: {fileID: 4560040353331234945, guid: 15b1e7569cb6b3d4fa8c9788e61567db, type: 3}
     count: 20
@@ -26405,12 +26405,14 @@ MonoBehaviour:
   - enemy: {fileID: 5613424761262872395, guid: 0daf079c69bc765458120c83c100c165, type: 3}
     count: 15
     rate: 2
+  incomeWaves: []
   gameManager: {fileID: 1913235303}
   spawnPoint: {fileID: 1124538786}
   waveCountDownText: {fileID: 932284059}
   enemiesAliveCountText: {fileID: 448228085}
   timeBetweenWaves: 10
-  initialCountdown: 1000
+  countdown: 0
+  initialCountdown: 20
 --- !u!4 &1913235300
 Transform:
   m_ObjectHideFlags: 0
@@ -26458,9 +26460,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce11dd8ac7cd8764ca84f5242fa891a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 3000
+  startMoney: 30000
   startIncome: 0
-  startEuros: 0
+  startEuros: 1000
   startKingLife: 1500
   king: {fileID: 8404966489078542250}
 --- !u!114 &1913235303

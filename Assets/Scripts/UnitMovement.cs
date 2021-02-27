@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Unit))]
 public class UnitMovement : MonoBehaviour
 {
+    [SerializeField] private bool canMove;
     private Transform target;
     private int wavePointIndex = 0;
 
@@ -18,16 +19,28 @@ public class UnitMovement : MonoBehaviour
 
         unit = GetComponent<Unit>();
         target = WayPoints.points[0];
-
         //turret
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
 
+    public void setCanMove(bool value)
+    {
+        canMove = value;
+    }
+
+    public bool getCanMove()
+    {
+        return canMove;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+        if (!canMove)
+        {
+            return;
+        }
         //mover si no hay enemigos
         if (!thereIsTargetToAttack)
         {

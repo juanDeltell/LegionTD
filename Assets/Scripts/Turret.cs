@@ -49,7 +49,6 @@ public class Turret : MonoBehaviour
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
         if (this.GetComponent<Turret>().name == "King")
         {
-            Debug.Log("soy el rey");
             health = PlayerStats.KingLife;
             startHealth = PlayerStats.KingLife;
         }

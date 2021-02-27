@@ -78,7 +78,6 @@ public class GameManager : MonoBehaviour
         {
           //  incomeMenu.SelecIncomeFour();
         }
-
     }
 
     void EndGame()
