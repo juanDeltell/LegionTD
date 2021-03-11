@@ -33,14 +33,14 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] private float initialCountdown = 55f;
 
     private int waveIndex = 0;
-    private bool levelEnded;
+    public bool levelEnded;
 
     // Start is called before the first frame update
     void Start()
     {
         EnemiesAlive = 0;
         countdown = initialCountdown;
-        levelEnded = false;
+        levelEnded = true;
     }
     public int  getEnemiesAlive()
     {
@@ -72,12 +72,13 @@ public class WaveSpawner : MonoBehaviour
             levelEnded = false;
             PlayerStats.Money += PlayerStats.Income;
             Debug.Log("Level ended, income added to your money. (+ $" + PlayerStats.Income + ")");
+            //need to reestart all the actives turrets
         }
 
         if (countdown <= 0f)
         {
             StartCoroutine(SpawnWave());
-            newRound();
+            SpawnIncomeOnWave();
             countdown = timeBetweenWaves;
             levelEnded = true;
             return;
@@ -148,11 +149,11 @@ public class WaveSpawner : MonoBehaviour
 
 
     /// <summary>
-    /// thisd metod is adding the income new units to the new round.
+    /// this metod is adding the income new units to the new round.
     /// It instantiate a new obj from the tipe of the list and then destroy the original one.
     /// For last it clears the list of new incomes.
     /// </summary>
-    public void newRound()
+    public void SpawnIncomeOnWave()
     {
         foreach (GameObject enemy in incomeWaves)
         {

@@ -11,6 +11,7 @@ public class Node : MonoBehaviour
     [SerializeField] private Camera mainCamera;
 
     [SerializeField] private GameObject turret;
+    [SerializeField] private GameObject turretOnLastRound;
 
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private string layerTurretName;
@@ -19,8 +20,8 @@ public class Node : MonoBehaviour
     [HideInInspector] public TurretBluePrint turretBluePrint;
     [HideInInspector] public bool isUpgraded;
     public bool isTurretOn;
-    
 
+    WaveSpawner waveSpawner;
     BuildManager buildManager;
 
     // Start is called before the first frame update
@@ -82,6 +83,8 @@ public class Node : MonoBehaviour
         buildManager.profitsUI.SetTargetLoosesText(this);
 
         turret.GetComponent<Turret>().setNodeOfThisTurret(this);
+        
+        turretOnLastRound = turret;
 
         isTurretOn = true;
         Debug.Log("Turret built. Player money left: " + PlayerStats.Money);
@@ -106,7 +109,7 @@ public class Node : MonoBehaviour
         GameObject _turret = (GameObject)Instantiate(turretBluePrint.upgradedPrefab, transform.position, Quaternion.identity);
 
         turret = _turret;
-
+        turretOnLastRound = turret;
         GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(effect, 5f);
 
@@ -132,6 +135,8 @@ public class Node : MonoBehaviour
 
 
         Destroy(turret);
+        turret = null;
+        turretOnLastRound = null;
         turretBluePrint = null;
         isTurretOn = false;
     }
@@ -159,11 +164,24 @@ public class Node : MonoBehaviour
         return transform.position;
     }
 
+    public void NewRound()
+    {
+        Destroy(turret);
+       
+        GameObject _turret = (GameObject)Instantiate(turretOnLastRound, transform.position, Quaternion.identity);
+
+        turret = _turret;
+
+    }
 
     // Update is called once per frame
     void Update()
-    {
-        
-        
+    {/*
+        if (waveSpawner.levelEnded)
+        {
+            NewRound();
+            Debug.Log("estamos en el update de node");
+        }
+       */     
     }
 }

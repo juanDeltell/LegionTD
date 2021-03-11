@@ -14,6 +14,9 @@ public class PlayerStats : MonoBehaviour
     public float startKingLife = 20;
     public static int rounds;
 
+    public List<GameObject> PlayerTurrets;
+
+
     [Header("King")]
     public Turret king;
 
